@@ -132,7 +132,13 @@ def run_author_mode(param_int_author_uid):
 
     for self_tag in self_tag_parse_link:
         self_tag_link = self_tag.get("href")
-        self_tag_name = self_tag.next.text
+        self_tag_sub = self_tag
+        while True:
+            self_tag_sub = self_tag_sub.next
+            self_str_tag_name = self_tag_sub.name
+            if self_str_tag_name is None:
+                break  # If the node has no tag we found the text.
+        self_tag_name = self_tag_sub
         self_str_tag_filename = re.sub(r"[^\w\-_. ]", "", self_tag_name.replace(" ", "_"))
         self_str_tag_file = self_str_tag_filename + ".html"
         run_site_mode(self_str_tag_file, self_str_tag_filename, self_tag_link, self_tag_link, True)
