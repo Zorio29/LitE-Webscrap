@@ -57,7 +57,7 @@ Let's say we want to obtain the html from https://www.literotica.com/s/three-squ
     * The file name will be the title removing special characters and replacing spaces with underscores.
     * A story named `Story title: Bk.01 Ch.01` would generate `Story_title_Bk.01_Ch.01.html`
 * `File <NAME> generated` will be printed for each of the files the script generates.
-* This process can take a long time.
+* This process can take a long time. It took me about 15-20 minutes to obtain all chapters of Three Square Meals, for example.
 
 #### list mode
 * Create a text file with each of the urls in one line.
